@@ -50,21 +50,21 @@ void SeqList_Destroy(SeqList* List)
 
 void SeqList_Clean(SeqList* List)
 {
-	PT_SeqList gt_List = (PT_SeqList)List;
+	PT_SeqList ptList = (PT_SeqList)List;
 	
-	assert(NULL != gt_List);
+	assert(NULL != ptList);
 	
-	gt_List->length = 0;
+	ptList->length = 0;
 }
 
 int SeqList_Length(SeqList* List) /* 获取当前包含数据的长度 */
 {
-	PT_SeqList gt_List = (PT_SeqList)List;
+	PT_SeqList ptList = (PT_SeqList)List;
 	int ret = -1;
 	
-	if(gt_List != NULL)
+	if(ptList != NULL)
 	{
-		ret = gt_List->length;
+		ret = ptList->length;
 	}
 	return ret;
 }
@@ -72,12 +72,12 @@ int SeqList_Length(SeqList* List) /* 获取当前包含数据的长度 */
 
 int SeqList_capacity(SeqList* List)
 {
-	PT_SeqList gt_List = (PT_SeqList)List;
+	PT_SeqList ptList = (PT_SeqList)List;
 	int ret = -1;
 	
-	if(gt_List != NULL)
+	if(ptList != NULL)
 	{
-		ret = gt_List->capacity;
+		ret = ptList->capacity;
 	}
 	return ret;
 }
@@ -85,26 +85,26 @@ int SeqList_capacity(SeqList* List)
 int SeqList_Insert(SeqList* List, SeqListNode* node, int pos)
 {
 	/* 将插入元素后面的元素后移一个位置->将新元素加1->线性表长度加1 */
-	PT_SeqList gt_List = (PT_SeqList)List;
-	assert(gt_List != NULL);
+	PT_SeqList ptList = (PT_SeqList)List;
+	assert(ptList != NULL);
 	int ret = -1;
 	int i = 0;
 	
-	if((gt_List->length + 1 <= gt_List->capacity) && (0 <= pos))
+	if((ptList->length + 1 <= ptList->capacity) && (0 <= pos))
 	{
-		if(pos >= gt_List->length)
+		if(pos >= ptList->length)
 		{
-			pos = gt_List->length;
+			pos = ptList->length;
 		}
 		
-		for(i=gt_List->length; i>pos; i--)
+		for(i=ptList->length; i>pos; i--)
 		{
-			gt_List->data[i] = gt_List->data[i-1]; /* 后移赋值 */
+			ptList->data[i] = ptList->data[i-1]; /* 后移赋值 */
 		}
 		
-		gt_List->data[i] = (*(data_t *)node);
+		ptList->data[i] = (*(data_t *)node);
 		
-		gt_List->length++;
+		ptList->length++;
 		
 		ret = 0;
 	}
@@ -117,31 +117,31 @@ int SeqList_Insert(SeqList* List, SeqListNode* node, int pos)
 
 SeqListNode* SeqList_Get(SeqList* List, int pos)
 {
-	PT_SeqList gt_List = (PT_SeqList)List;
+	PT_SeqList ptList = (PT_SeqList)List;
 	SeqListNode* ret = NULL;
 	
-	assert(gt_List != NULL);
+	assert(ptList != NULL);
 	
-	if((0 <= pos) && (pos < gt_List->length))
+	if((0 <= pos) && (pos < ptList->length))
 	{
-		ret = (SeqListNode *)&(gt_List->data[pos]);
+		ret = (SeqListNode *)&(ptList->data[pos]);
 	}
 	return ret;
 }
 
 SeqListNode* SeqList_Delete(SeqList* List, int pos)
 {
-	PT_SeqList gt_List = (PT_SeqList)List;
+	PT_SeqList ptList = (PT_SeqList)List;
 	SeqListNode* ret = SeqList_Get(List, pos);
 	
 	assert(ret != NULL);
 	
-	for(int i=pos+1; i<gt_List->length; i++)
+	for(int i=pos+1; i<ptList->length; i++)
 	{
-		gt_List->data[i-1] = gt_List->data[i];
+		ptList->data[i-1] = ptList->data[i];
 	}
 	
-	gt_List->length--;
+	ptList->length--;
 	
 	return ret;
 }
