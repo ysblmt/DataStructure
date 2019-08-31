@@ -108,10 +108,7 @@ int SeqList_Insert(SeqList* List, SeqListNode* node, int pos)
 		
 		ret = 0;
 	}
-	else
-	{
-		ret = -1;
-	}
+
 	return ret;
 }
 
