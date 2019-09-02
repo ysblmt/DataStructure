@@ -1,8 +1,1 @@
-# 数据结构
-## 线性表
-## 单链表
-## 循环链表
-## 双向链表
-
-# 基础算法
-## 排序算法
+This file is mainly for programmatic display of data structures and algorithms.
