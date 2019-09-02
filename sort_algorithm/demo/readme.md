@@ -1,0 +1,15 @@
+# ╫╩╩╩еепР
+bubblesort.c ц╟ещеепР  
+quicksort.c ©ЛкыеепР  
+# ╡ЕхКеепР
+insertsort.c ж╠╡ЕеепР  
+shellsort.c оё╤ШеепР  
+# я║тЯеепР
+selectionsort.c ж╠я║еепР  
+heapsort.c ╤яеепР  
+# ╧И╡╒еепР
+mergesort.c ╧И╡╒еепР  
+# ╪фйЩеепР
+bucketsort.c м╟еепР  
+countsort.c ╪фйЩеепР  
+radixsort.c ╩ЫйЩеепР  
